@@ -1,10 +1,17 @@
 <template>
-  
+  <main>
+      <section-cds/>
+  </main>
 </template>
 
 <script>
+import SectionCds from './SectionCds.vue'
+
 export default {
-    name : 'MainComponents'
+    name : 'MainComponents',
+    components: { 
+        SectionCds 
+    },
 }
 </script>
 
