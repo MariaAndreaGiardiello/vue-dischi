@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SectionCds from './SectionCds.vue'
+import SectionCds from '../components/sections/SectionCds.vue'
 
 export default {
     name : 'MainComponents',
