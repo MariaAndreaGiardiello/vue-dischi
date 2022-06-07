@@ -1,8 +1,8 @@
 <template>
   <section>
       <div class="container">
-          <div class="row">
-                <album-covers class="col-2 m-3"  v-for="(albums, index) in albums" :key="index"/>
+          <div class="row justify-content-center">
+                <album-covers class= "col-6 col-sm-4 col-md-3 col-lg-2 m-3" v-for="(album, index) in albums" :key="index" :album="album"/>
           </div>
       </div>
   </section>
@@ -22,6 +22,7 @@ export default {
         axios.get("https://flynn.boolean.careers/exercises/api/array/music")
             .then((response) => {
             this.albums = response.data.response;
+            console.log(response.data.response);
         })
             .catch((error) => {
             console.log(error);
