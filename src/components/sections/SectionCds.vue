@@ -3,7 +3,7 @@
       <div class="container">
           <div class="row justify-content-center">
               <div class="col-12">
-                  <FilterSearchVue/>
+                  <FilterSearchVue @searching="songGenre"/>
               </div>
           </div>
           <div class="row justify-content-center">
@@ -23,19 +23,28 @@ export default {
     data() {
         return {
             albums: [],
+            albumsGenre: [],
         };
     },
     created() {
         axios.get("https://flynn.boolean.careers/exercises/api/array/music")
             .then((response) => {
             this.albums = response.data.response;
-            console.log(response.data.response);
+            this.albumsGenre = response.data.response;
         })
             .catch((error) => {
             console.log(error);
         });
     },
-    components: { AlbumCovers, FilterSearchVue, }
+    components: { 
+        AlbumCovers, 
+        FilterSearchVue, 
+    },
+    methods: {
+        songGenre(searchText) {
+            this.albumsGenre = this.albums.filter((elm) => elm.genre.toLowerCase().includes(searchText.toLowerCase()))
+        }
+    },
 }
 
 </script>
