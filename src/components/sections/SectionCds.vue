@@ -7,7 +7,7 @@
               </div>
           </div>
           <div class="row justify-content-center">
-                <album-covers class= "col-6 col-sm-4 col-md-3 col-lg-2 m-3" v-for="(album, index) in albums" :key="index" :album="album"/>
+                <album-covers class= "col-6 col-sm-4 col-md-3 col-lg-2 m-3" v-for="(album, index) in albumsGenre" :key="index" :album="album"/>
           </div>
       </div>
   </section>
