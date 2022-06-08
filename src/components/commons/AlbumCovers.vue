@@ -3,8 +3,8 @@
       <div class="album-cover">
           <img class="img-fluid" :src="album.poster" alt="">
       </div>
-      <h4 class="song-title">Titolo Canzone</h4>
-      <h5 class="author-year">Autore e Anno</h5>
+      <h5 class="song-title">{{album.title}}</h5>
+      <h6 class="author-year">{{album.author}} {{album.year}}</h6>
   </div>
 </template>
 
@@ -20,12 +20,25 @@ export default {
 <style lang="scss" scoped>
 .album-box {
     background-color: var(--primary-color);
-    height: 300px;  
+}
+
+.song-title {
+    color: var(--song-title-color);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.author-year {
+    color: var(--song-author-year);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .album-cover {
-    margin: 15px 10px;
-    width: 150px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
+    margin: 15px auto;
 }
 </style>
