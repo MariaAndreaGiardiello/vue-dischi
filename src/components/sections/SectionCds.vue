@@ -2,6 +2,11 @@
   <section>
       <div class="container">
           <div class="row justify-content-center">
+              <div class="col-12">
+                  <FilterSearchVue/>
+              </div>
+          </div>
+          <div class="row justify-content-center">
                 <album-covers class= "col-6 col-sm-4 col-md-3 col-lg-2 m-3" v-for="(album, index) in albums" :key="index" :album="album"/>
           </div>
       </div>
@@ -11,8 +16,10 @@
 <script>
 import axios from 'axios';
 import AlbumCovers from '../commons/AlbumCovers.vue';
+import FilterSearchVue from '../commons/FilterSearch.vue';
 export default {
     name: "SectionCds",
+
     data() {
         return {
             albums: [],
@@ -28,7 +35,7 @@ export default {
             console.log(error);
         });
     },
-    components: { AlbumCovers }
+    components: { AlbumCovers, FilterSearchVue, }
 }
 
 </script>
