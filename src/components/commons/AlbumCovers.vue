@@ -4,7 +4,7 @@
           <img class="img-fluid" :src="album.poster" alt="">
       </div>
       <h5 class="song-title">{{album.title}}</h5>
-      <h6 class="author-year">{{album.author}} {{album.year}}</h6>
+      <h6 class="author-year">{{album.author}} <br> {{album.year}}</h6>
   </div>
 </template>
 
@@ -34,6 +34,7 @@ export default {
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
+    margin: 15px auto;
 }
 
 .album-cover {
